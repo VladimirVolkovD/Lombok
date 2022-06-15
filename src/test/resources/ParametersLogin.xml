@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Parameters Test" parallel="methods" thread-count="3">
+    <test name="Sauce demo">
+        <classes>
+            <class name="com.saucedemo.tests.TestParameters">
+                <parameter name="username" value="aaaaa"/>
+                <parameter name="password" value="22222"/>
+                <parameter name="expectedResult"
+                           value="Epic sadface: Username and password do not match any user in this service"/>
+            </class>
+        </classes>
+    </test>
+    <test name="Cart">
+        <classes>
+            <class name="com.saucedemo.tests.TestCart"></class>
+        </classes>
+    </test>
+    <test name="Login">
+        <classes>
+            <class name="com.saucedemo.tests.TestLogin"></class>
+        </classes>
+    </test>
+    <test name="LogOut">
+        <classes>
+            <class name="com.saucedemo.tests.TestLogout"></class>
+        </classes>
+    </test>
+</suite>
+
+
+<!--
+classes - запуск отдельного класса в  потоке
+Methods - запуск тестов одного класса в потоке
+tests - блок тест xml идет паралельно
+taskkill /f /im chromedriver.exe
+
+C:\Users\horsk>taskkill /f /im chromedriver.exe
+SUCCESS: The process "chromedriver.exe" with PID 17700 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 21616 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 11556 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 18976 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 25908 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 26020 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 19808 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 30256 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 30292 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 16696 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 23816 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 24620 has been terminated.
+SUCCESS: The process "chromedriver.exe" with PID 20944 has been terminated.
+-->
+
+
+
