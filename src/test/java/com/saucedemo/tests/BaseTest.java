@@ -4,6 +4,7 @@ import com.saucedemo.pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 import utils.PropertyReader;
 
@@ -17,7 +18,13 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+        ChromeOptions opt = new ChromeOptions();
+        if(System.getProperty("headless").equals("true")) {
+            opt.setHeadless(true);
+        }
+        driver = new ChromeDriver(opt);
+
         driver.manage().window().maximize();
         loginPage = new LoginPage(driver);
         reader = new PropertyReader();
