@@ -20,7 +20,7 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions opt = new ChromeOptions();
-        if(System.getProperty("headless").equals("true")) {
+        if(System.getProperty("headless", "false").equals("true")) {
             opt.setHeadless(true);
         }
         driver = new ChromeDriver(opt);
