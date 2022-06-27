@@ -32,8 +32,8 @@ pipeline {
 
             }
         }
-        stage('report') {
-            steps {
+        stage('reports stage') {
+           steps {
                 script {
                     allure([
                         includeProperties: false,
