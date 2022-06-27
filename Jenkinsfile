@@ -32,7 +32,7 @@ pipeline {
 
             }
         }
-        stage('Vim merge') {
+        stage('Vim') {
            steps {
                 script {
                     allure([
