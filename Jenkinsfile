@@ -32,7 +32,7 @@ pipeline {
 
             }
         }
-        stage('reports stage') {
+        stage('Allure report') {
             steps {
                 script {
                     allure([
